@@ -1,0 +1,4 @@
+batch_norm,accuracy,roc_auc
+With (momentum=0.1),0.9832,0.9997954388217276
+With (momentum=0.9),0.9939,0.9999006794279135
+Without,0.9978,0.9999796798829561
