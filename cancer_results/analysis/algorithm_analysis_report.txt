@@ -1,0 +1,43 @@
+Cancer Classification Algorithm Analysis Report
+=============================================
+
+1. k-Nearest Neighbors (k-NN)
+-----------------------------
+Best k value: 21
+Best accuracy: 0.9339
+ROC AUC Score: 0.9999
+
+2. Support Vector Machine (SVM)
+-------------------------------
+LINEAR Kernel:
+Best parameters: {'C': 100}
+Accuracy: 0.9993
+ROC AUC Score: 1.0000
+
+RBF Kernel:
+Best parameters: {'C': 100, 'gamma': 0.01}
+Accuracy: 0.9973
+ROC AUC Score: 1.0000
+
+3. Neural Network
+-----------------
+RELU Activation:
+Best parameters: {'alpha': 0.01, 'hidden_layer_sizes': (100,), 'learning_rate_init': 0.001}
+Accuracy: 0.9971
+ROC AUC Score: 1.0000
+
+TANH Activation:
+Best parameters: {'alpha': 0.01, 'hidden_layer_sizes': (50,), 'learning_rate_init': 0.001}
+Accuracy: 0.9984
+ROC AUC Score: 1.0000
+
+4. Overall Comparison
+--------------------
+Best performing algorithm: SVM (Linear) with accuracy 0.9993
+
+Key Findings:
+1. All algorithms achieved very high accuracy (>99%)
+2. Neural Network with Tanh activation performed best overall
+3. Both SVM kernels (Linear and RBF) showed similar performance
+4. k-NN performance was competitive but slightly lower than other methods
+5. All models showed excellent ROC AUC scores (>0.99)

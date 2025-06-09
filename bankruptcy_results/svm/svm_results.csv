@@ -1,0 +1,3 @@
+kernel,best_params,accuracy,roc_auc
+linear,{'C': 1},0.967008797653959,0.8903064738292011
+rbf,"{'C': 1, 'gamma': 'scale'}",0.967741935483871,0.862086776859504
