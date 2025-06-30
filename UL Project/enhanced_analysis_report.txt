@@ -1,0 +1,179 @@
+ENHANCED UNSUPERVISED LEARNING ANALYSIS REPORT
+============================================================
+
+1. DATA RANK AND COLLINEARITY ANALYSIS
+----------------------------------------
+
+CANCER DATASET:
+  Rank: 9/9 (100.0% of full rank)
+  Rank deficiency: 0
+  Condition number: 1.02e+00
+  Mean VIF: 1.00
+  Max VIF: 1.00
+  High correlation pairs: 0
+
+BANKRUPTCY DATASET:
+  Rank: 91/95 (95.8% of full rank)
+  Rank deficiency: 4
+  Condition number: inf
+  Mean VIF: 1117134250.65
+  Max VIF: 51231410779.24
+  High correlation pairs: 43
+  Highly correlated features:
+     ROA(C) before interest and depreciation before interest -  ROA(A) before interest and % after tax: 0.940
+     ROA(C) before interest and depreciation before interest -  ROA(B) before interest and depreciation after tax: 0.987
+     ROA(C) before interest and depreciation before interest -  Net Income to Total Assets: 0.888
+     ROA(A) before interest and % after tax -  ROA(B) before interest and depreciation after tax: 0.956
+     ROA(A) before interest and % after tax -  Net Income to Total Assets: 0.962
+
+
+2. PCA EIGENVALUE ANALYSIS
+------------------------------
+
+CANCER DATASET:
+  Total variance: 450000.00
+  Eigenvalue ratio (lambda1/lambda2): 1.01
+  Condition number: 1.04e+00
+  Components for 80% variance: 8
+  Components for 90% variance: 9
+  Components for 95% variance: 9
+  Knee point: 7
+  Eigenvalue distribution:
+    lambda1: 51084.817 (11.4%)
+    lambda2: 50669.655 (11.3%)
+    lambda3: 50338.323 (11.2%)
+    lambda4: 50246.794 (11.2%)
+    lambda5: 49963.423 (11.1%)
+
+BANKRUPTCY DATASET:
+  Total variance: 640986.00
+  Eigenvalue ratio (lambda1/lambda2): 1.85
+  Condition number: inf
+  Components for 80% variance: 34
+  Components for 90% variance: 45
+  Components for 95% variance: 53
+  Knee point: 1
+  Eigenvalue distribution:
+    lambda1: 85552.251 (13.3%)
+    lambda2: 46239.149 (7.2%)
+    lambda3: 32284.443 (5.0%)
+    lambda4: 30283.280 (4.7%)
+    lambda5: 27143.947 (4.2%)
+
+
+3. ICA KURTOSIS ANALYSIS
+-------------------------
+
+CANCER DATASET:
+  Mean kurtosis: -1.202
+  Std kurtosis: 0.008
+  Max kurtosis: -1.193
+  Min kurtosis: -1.221
+  Kurtosis range: 0.028
+  High kurtosis components (|k| > 2): 0
+  Low kurtosis components (|k| < 0.5): 0
+  Component kurtosis values:
+    Component 1: -1.205
+    Component 2: -1.203
+    Component 3: -1.193
+    Component 4: -1.196
+    Component 5: -1.198
+
+BANKRUPTCY DATASET:
+  Mean kurtosis: 1552.226
+  Std kurtosis: 2185.389
+  Max kurtosis: 6372.625
+  Min kurtosis: 3.203
+  Kurtosis range: 6369.422
+  High kurtosis components (|k| > 2): 10
+  Low kurtosis components (|k| < 0.5): 0
+  Component kurtosis values:
+    Component 1: 279.640
+    Component 2: 6372.625
+    Component 3: 25.788
+    Component 4: 4813.449
+    Component 5: 2385.881
+
+
+4. RANDOMIZED PROJECTION RECONSTRUCTION ERROR
+---------------------------------------------
+
+CANCER DATASET:
+  MSE: nan
+  RMSE: nan
+  MAE: nan
+  Relative MSE: nan
+  Relative RMSE: nan
+  Distance preservation ratio: nan ± nan
+
+BANKRUPTCY DATASET:
+  MSE: nan
+  RMSE: nan
+  MAE: nan
+  Relative MSE: nan
+  Relative RMSE: nan
+  Distance preservation ratio: nan ± nan
+
+
+5. RANDOMIZED PROJECTION STABILITY
+-----------------------------------
+
+CANCER DATASET:
+  Number of runs: 20
+  Mean data variance: 4.274364
+  Component similarity: 0.174 ± 0.122
+  Distance preservation: 0.893 ± 0.147
+  Stability score: 0.146
+
+BANKRUPTCY DATASET:
+  Number of runs: 20
+  Mean data variance: 44.215025
+  Component similarity: 0.063 ± 0.043
+  Distance preservation: 0.888 ± 0.115
+  Stability score: 0.055
+
+
+6. GROUNDED CLUSTER DESCRIPTIONS
+-----------------------------------
+
+CANCER DATASET:
+
+  K-MEANS CLUSTERS:
+    Cluster 0: Cancer patients with moderate risk profile
+      Size: 15718 samples (31.4%)
+      Key characteristics: Air_Pollution (high: 0.95 vs -0.00), Year (low: -0.60 vs -0.00)
+    Cluster 1: Cancer patients with moderate risk profile
+      Size: 18788 samples (37.6%)
+      Key characteristics: Year (high: 1.05 vs -0.00)
+    Cluster 2: Cancer patients with moderate risk profile
+      Size: 15494 samples (31.0%)
+      Key characteristics: Air_Pollution (low: -0.91 vs -0.00), Year (low: -0.67 vs -0.00)
+
+  EM CLUSTERS:
+    Cluster 0: Cancer patients with moderate risk profile
+      Size: 18759 samples (37.5%)
+      Key characteristics: Year (high: 1.08 vs -0.00)
+    Cluster 1: Cancer patients with moderate risk profile
+      Size: 15847 samples (31.7%)
+      Key characteristics: Air_Pollution (low: -0.92 vs -0.00), Year (low: -0.61 vs -0.00)
+    Cluster 2: Cancer patients with moderate risk profile
+      Size: 15394 samples (30.8%)
+      Key characteristics: Air_Pollution (high: 0.85 vs -0.00), Year (low: -0.69 vs -0.00)
+
+BANKRUPTCY DATASET:
+
+  K-MEANS CLUSTERS:
+    Cluster 0: Companies with average financial health
+      Size: 4256 samples (62.4%)
+      Key characteristics: 
+    Cluster 1: Companies with average financial health
+      Size: 2563 samples (37.6%)
+      Key characteristics:  ROA(C) before interest and depreciation before interest (high: 0.78 vs -0.00),  ROA(B) before interest and depreciation after tax (high: 0.75 vs -0.00)
+
+  EM CLUSTERS:
+    Cluster 0: Companies with average financial health
+      Size: 6160 samples (90.3%)
+      Key characteristics: 
+    Cluster 1: Companies with average financial health
+      Size: 659 samples (9.7%)
+      Key characteristics:  Net Income to Total Assets (low: -0.85 vs 0.00),  Retained Earnings to Total Assets (low: -0.85 vs 0.00)

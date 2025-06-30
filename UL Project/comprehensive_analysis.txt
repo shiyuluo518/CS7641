@@ -1,0 +1,122 @@
+COMPREHENSIVE UNSUPERVISED LEARNING ANALYSIS
+============================================================
+
+HYPOTHESES:
+--------------------
+
+CANCER_DATASET:
+  clustering
+  dimensionality_reduction
+
+BANKRUPTCY_DATASET:
+  clustering
+  dimensionality_reduction
+
+COMBINED_ANALYSIS:
+  H13: PCA + K-means will be the best combination for both datasets
+  H14: Non-linear methods (t-SNE) will reveal complex patterns not captured by linear methods
+  H15: Neural networks will perform best with PCA-reduced features
+
+
+DISTANCE MEASURE JUSTIFICATIONS:
+-----------------------------------
+
+EUCLIDEAN_DISTANCE:
+  Choice: Primary distance measure for K-means
+  Justifications:
+    - Standard choice for continuous numerical data
+    - Works well with standardized features
+    - Computationally efficient and interpretable
+    - Appropriate for both cancer risk factors and financial ratios
+
+MAHALANOBIS_DISTANCE:
+  Choice: Implicitly used in Gaussian Mixture Models (EM)
+  Justifications:
+    - Accounts for feature correlations
+    - Scale-invariant distance measure
+    - Better for elliptical cluster shapes
+    - Natural choice for multivariate normal distributions
+
+COSINE_SIMILARITY:
+  Choice: Alternative for high-dimensional data
+  Justifications:
+    - Focuses on direction rather than magnitude
+    - Useful when features have different scales
+    - Robust to outliers in magnitude
+    - Good for financial ratio analysis
+
+
+THEORETICAL FOUNDATIONS:
+-------------------------
+
+KMEANS:
+  Algorithm: K-Means Clustering
+  Theory:
+    - Minimizes within-cluster sum of squares (WCSS)
+    - Assumes spherical clusters with equal variance
+    - Converges to local minimum using Lloyd's algorithm
+    - Sensitive to initial centroid placement
+  Assumptions:
+    - Clusters are spherical and equally sized
+    - Features are independent and equally important
+    - Data is continuous and numerical
+
+EM:
+  Algorithm: Expectation Maximization (Gaussian Mixture Model)
+  Theory:
+    - Models data as mixture of Gaussian distributions
+    - E-step: Compute posterior probabilities
+    - M-step: Update parameters to maximize likelihood
+    - Can model elliptical clusters with different sizes
+  Assumptions:
+    - Data follows mixture of Gaussian distributions
+    - Components are independent
+    - Covariance matrices can be different
+
+PCA:
+  Algorithm: Principal Component Analysis
+  Theory:
+    - Finds directions of maximum variance
+    - Orthogonal transformation to uncorrelated components
+    - Minimizes reconstruction error
+    - Eigenvalue decomposition of covariance matrix
+  Assumptions:
+    - Linear relationships between features
+    - Gaussian distribution of data
+    - Variance captures important information
+
+ICA:
+  Algorithm: Independent Component Analysis
+  Theory:
+    - Finds statistically independent components
+    - Assumes non-Gaussian source signals
+    - Maximizes non-Gaussianity (kurtosis/negentropy)
+    - Useful for blind source separation
+  Assumptions:
+    - Source signals are statistically independent
+    - Non-Gaussian distributions
+    - Linear mixing model
+
+RANDOMIZED_PROJECTION:
+  Algorithm: Randomized Projection
+  Theory:
+    - Johnson-Lindenstrauss lemma guarantees distance preservation
+    - Random projection matrix preserves distances
+    - Computationally efficient for high dimensions
+    - Approximate but fast dimensionality reduction
+  Assumptions:
+    - Random projection preserves cluster structure
+    - Sufficient dimensionality for distance preservation
+    - Euclidean distances are meaningful
+
+TSNE:
+  Algorithm: t-Distributed Stochastic Neighbor Embedding
+  Theory:
+    - Non-linear dimensionality reduction
+    - Preserves local structure and clusters
+    - Uses t-distribution for low-dimensional embedding
+    - Minimizes KL divergence between distributions
+  Assumptions:
+    - Local structure is more important than global
+    - Cluster preservation is desired
+    - Non-linear relationships exist in data

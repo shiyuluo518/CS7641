@@ -1,0 +1,241 @@
+Unsupervised Learning Project Results
+==================================================
+
+kmeans_cancer:
+  labels: shape (50000,)
+  centroids: shape (3, 9)
+  inertia: 389463.5816106027
+  silhouette_score: 0.07160466376034876
+  calinski_harabasz_score: 3885.7067493820305
+  davies_bouldin_score: 2.9108102695413525
+
+kmeans_bankruptcy:
+  labels: shape (6819,)
+  centroids: shape (2, 95)
+  inertia: 599905.9832890301
+  silhouette_score: 0.10953106096352695
+  calinski_harabasz_score: 466.8117401800945
+  davies_bouldin_score: 2.5995436853256098
+
+em_cancer:
+  labels: shape (50000,)
+  means: shape (3, 9)
+  covariances: shape (3, 9, 9)
+  aic: 1264477.734925488
+  bic: 1265924.1785641313
+  silhouette_score: 0.06933296062943874
+  calinski_harabasz_score: 3820.144030783919
+  davies_bouldin_score: 3.0069869952036306
+
+em_bankruptcy:
+  labels: shape (6819,)
+  means: shape (2, 95)
+  covariances: shape (2, 95, 95)
+  aic: -1239946.6977092614
+  bic: -1176376.1421135815
+  silhouette_score: 0.40914457426059087
+  calinski_harabasz_score: 92.17584939371544
+  davies_bouldin_score: 5.520609289543473
+
+pca_cancer:
+  reduced_data: shape (50000, 2)
+  explained_variance_ratio: shape (2,)
+  cumulative_variance_ratio: shape (2,)
+  components: shape (2, 9)
+  singular_values: shape (2,)
+
+pca_bankruptcy:
+  reduced_data: shape (6819, 2)
+  explained_variance_ratio: shape (2,)
+  cumulative_variance_ratio: shape (2,)
+  components: shape (2, 95)
+  singular_values: shape (2,)
+
+ica_cancer:
+  reduced_data: shape (50000, 2)
+  mixing_matrix: shape (9, 2)
+  unmixing_matrix: shape (2, 9)
+
+ica_bankruptcy:
+  reduced_data: shape (6819, 2)
+  mixing_matrix: shape (95, 2)
+  unmixing_matrix: shape (2, 95)
+
+rp_cancer:
+  reduced_data: shape (50000, 2)
+  components: shape (2, 9)
+
+rp_bankruptcy:
+  reduced_data: shape (6819, 2)
+  components: shape (2, 95)
+
+tsne_cancer:
+  reduced_data: shape (50000, 2)
+
+tsne_bankruptcy:
+  reduced_data: shape (6819, 2)
+
+kmeans_cancer_pca:
+  labels: shape (50000,)
+  centroids: shape (3, 2)
+  inertia: 45855.616264436416
+  silhouette_score: 0.3334124658767192
+  calinski_harabasz_score: 30475.313177922242
+  davies_bouldin_score: 0.9332184565975331
+
+kmeans_bankruptcy_pca:
+  labels: shape (6819,)
+  centroids: shape (2, 2)
+  inertia: 92078.46123793077
+  silhouette_score: 0.37129558231969834
+  calinski_harabasz_score: 2940.2092094398968
+  davies_bouldin_score: 0.9740806620264724
+
+em_cancer_pca:
+  labels: shape (50000,)
+  means: shape (3, 2)
+  covariances: shape (3, 2, 2)
+  aic: 285272.324687098
+  bic: 285422.26091793296
+  silhouette_score: 0.3304632874398322
+  calinski_harabasz_score: 30200.05007453889
+  davies_bouldin_score: 0.9376720907702616
+
+em_bankruptcy_pca:
+  labels: shape (6819,)
+  means: shape (2, 2)
+  covariances: shape (2, 2, 2)
+  aic: 61592.303185279954
+  bic: 61667.40533451768
+  silhouette_score: 0.6822966064934884
+  calinski_harabasz_score: 243.9400496422348
+  davies_bouldin_score: 3.2970977309706146
+
+kmeans_cancer_ica:
+  labels: shape (50000,)
+  centroids: shape (3, 2)
+  inertia: 45025.36092371058
+  silhouette_score: 0.33369340717671175
+  calinski_harabasz_score: 30522.62918949996
+  davies_bouldin_score: 0.9324284753727655
+
+kmeans_bankruptcy_ica:
+  labels: shape (6819,)
+  centroids: shape (2, 2)
+  inertia: 10414.869188091017
+  silhouette_score: 0.33659807674290915
+  calinski_harabasz_score: 2109.6988226873314
+  davies_bouldin_score: 1.1021950415488884
+
+em_cancer_ica:
+  labels: shape (50000,)
+  means: shape (3, 2)
+  covariances: shape (3, 2, 2)
+  aic: 283533.6872790157
+  bic: 283683.6235098507
+  silhouette_score: 0.33048265871782334
+  calinski_harabasz_score: 30198.778669618154
+  davies_bouldin_score: 0.9373130298873037
+
+em_bankruptcy_ica:
+  labels: shape (6819,)
+  means: shape (2, 2)
+  covariances: shape (2, 2, 2)
+  aic: 31294.507524749555
+  bic: 31369.60967398728
+  silhouette_score: 0.6833938274343094
+  calinski_harabasz_score: 345.1615305166963
+  davies_bouldin_score: 2.7034224780610088
+
+kmeans_cancer_rp:
+  labels: shape (50000,)
+  centroids: shape (3, 2)
+  inertia: 168543.81857368397
+  silhouette_score: 0.3329134570164074
+  calinski_harabasz_score: 31377.626859927477
+  davies_bouldin_score: 0.9769043934021404
+
+kmeans_bankruptcy_rp:
+  labels: shape (6819,)
+  centroids: shape (2, 2)
+  inertia: 386786.8299773919
+  silhouette_score: 0.34812764269362484
+  calinski_harabasz_score: 1820.2874993713992
+  davies_bouldin_score: 1.1237220921874063
+
+em_cancer_rp:
+  labels: shape (50000,)
+  means: shape (3, 2)
+  covariances: shape (3, 2, 2)
+  aic: 415287.697037057
+  bic: 415437.633267892
+  silhouette_score: 0.33263317244618046
+  calinski_harabasz_score: 31110.901296705826
+  davies_bouldin_score: 0.9746613962910811
+
+em_bankruptcy_rp:
+  labels: shape (6819,)
+  means: shape (2, 2)
+  covariances: shape (2, 2, 2)
+  aic: 77843.10982182738
+  bic: 77918.21197106512
+  silhouette_score: 0.7189947936747819
+  calinski_harabasz_score: 255.65784291366933
+  davies_bouldin_score: 3.3309553595002823
+
+kmeans_cancer_tsne:
+  labels: shape (50000,)
+  centroids: shape (3, 2)
+  inertia: 80294624.0
+  silhouette_score: 0.37383314967155457
+  calinski_harabasz_score: 38313.29913568606
+  davies_bouldin_score: 0.8648304190683814
+
+kmeans_bankruptcy_tsne:
+  labels: shape (6819,)
+  centroids: shape (2, 2)
+  inertia: 9836932.0
+  silhouette_score: 0.34836480021476746
+  calinski_harabasz_score: 4066.6971128580794
+  davies_bouldin_score: 1.1465755190841262
+
+em_cancer_tsne:
+  labels: shape (50000,)
+  means: shape (3, 2)
+  covariances: shape (3, 2, 2)
+  aic: 1036251.080217547
+  bic: 1036401.0164483819
+  silhouette_score: 0.36666879057884216
+  calinski_harabasz_score: 36953.6016852392
+  davies_bouldin_score: 0.8850404791838505
+
+em_bankruptcy_tsne:
+  labels: shape (6819,)
+  means: shape (2, 2)
+  covariances: shape (2, 2, 2)
+  aic: 133983.99596594903
+  bic: 134059.09811518676
+  silhouette_score: 0.34811317920684814
+  calinski_harabasz_score: 4037.371502921035
+  davies_bouldin_score: 1.1308489166486457
+
+nn_pca_cancer:
+  accuracy: 0.7728
+  predictions: shape (10000,)
+  true_labels: shape (10000,)
+
+nn_ica_cancer:
+  accuracy: 0.7723
+  predictions: shape (10000,)
+  true_labels: shape (10000,)
+
+nn_rp_cancer:
+  accuracy: 0.6559
+  predictions: shape (10000,)
+  true_labels: shape (10000,)
+
+nn_tsne_cancer:
+  accuracy: 0.8137
+  predictions: shape (10000,)
+  true_labels: shape (10000,)
+
