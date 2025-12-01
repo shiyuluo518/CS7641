@@ -1,0 +1,24 @@
+{
+  "training_stats": {
+    "total_timesteps": 100000,
+    "total_episodes": 1870,
+    "mean_reward": 26.86,
+    "std_reward": 21.01,
+    "mean_length": 53.6,
+    "std_length": 39.4,
+    "best_reward": 162.54,
+    "recent_mean_reward": 18.93,
+    "evaluation_mean_reward": 25.09,
+    "evaluation_std_reward": 6.97,
+    "evaluation_mean_length": 40.8,
+    "evaluation_std_length": 7.68,
+    "reward_range": {
+      "min_expected": 5.849999999999998,
+      "max_expected": 47.870000000000005
+    },
+    "episodes_per_update": 109518.71657754011,
+    "avg_steps_per_episode": 53.475935828877006
+  },
+  "tensorboard_run": "PPO_5",
+  "available_metrics": []
+}

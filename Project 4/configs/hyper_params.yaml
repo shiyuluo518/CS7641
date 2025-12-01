@@ -1,0 +1,26 @@
+---
+# Default hyperparameters - imports from organized location
+# This file maintains backward compatibility
+# For optimized versions, see configs/hyperparams/
+
+# Import optimized time-trial hyperparameters by default
+# To use: copy desired config from configs/hyperparams/ to this file
+# Or update HYPER_PARAMS_PATH in src/run.py
+
+seed:               42
+cpu_only:           false
+environment:        deepracer-v0
+experiment_name:    time_trial_ppo
+
+# PPO-specific hyperparameters
+learning_rate:      2.5e-4          # Optimized from 3e-4
+total_timesteps:    250000          # Increased for better convergence
+gamma:              0.99            # Discount factor
+n_steps:            2048            # Experience buffer size
+batch_size:         128             # Optimized from 64
+n_epochs:           10              # Optimal policy refinement iterations
+gae_lambda:         0.96            # Optimized from 0.95
+clip_range:         0.2             # PPO clipping range
+ent_coef:           0.008           # Optimized from 0.01
+vf_coef:            0.5             # Value function loss coefficient
+max_grad_norm:      0.5             # Maximum gradient norm for clipping

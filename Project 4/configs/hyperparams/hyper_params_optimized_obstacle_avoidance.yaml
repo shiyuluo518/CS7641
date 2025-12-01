@@ -1,0 +1,26 @@
+---
+# OPTIMIZED PPO Hyperparameters for Object-Avoidance Racing
+# Tuned for obstacle-rich environment with reduced speed
+
+seed:               42
+cpu_only:           false
+environment:        deepracer-v0
+experiment_name:    object_avoidance_ppo_optimized
+
+# PPO-specific hyperparameters - Optimized for Object-Avoidance
+learning_rate:      1.8e-4          # Reduced for increased complexity (obstacle avoidance requires more careful learning)
+total_timesteps:    350000          # Longer training for obstacle avoidance
+gamma:              0.99            # Discount factor (maintain immediate focus)
+n_steps:            2048            # Experience buffer size
+batch_size:         128             # Maintain increased batch size for stability
+n_epochs:           10              # Optimal epochs
+gae_lambda:         0.95            # Standard GAE lambda
+clip_range:         0.2             # Standard clipping range
+ent_coef:           0.015           # Increased from 0.02 for more exploration (obstacle avoidance requires exploration)
+vf_coef:            0.5             # Value function coefficient
+max_grad_norm:      0.5             # Gradient clipping
+
+# Additional optimizations
+normalize_advantage: true            # Normalize advantages
+target_kl:          0.015           # Slightly higher target KL for obstacle avoidance (more exploration)
+

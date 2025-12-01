@@ -1,0 +1,26 @@
+---
+# OPTIMIZED PPO Hyperparameters for Time-Trial Racing
+# Based on empirical research and DeepRacer competition best practices
+
+seed:               42
+cpu_only:           false
+environment:        deepracer-v0
+experiment_name:    time_trial_ppo_optimized
+
+# PPO-specific hyperparameters - Optimized for Time-Trial
+learning_rate:      2.5e-4          # Slightly reduced from 3e-4 for stability (optimal range: 2e-4 to 3e-4)
+total_timesteps:    250000          # Increased for better convergence
+gamma:              0.99            # Discount factor (optimal for racing - immediate actions matter)
+n_steps:            2048            # Experience buffer size (maintains ~100x batch_size for diversity)
+batch_size:         128             # Increased from 64 for more stable updates (optimal for discrete actions)
+n_epochs:           10              # Optimal policy refinement iterations (research shows 10 is optimal)
+gae_lambda:         0.96            # Increased from 0.95 for better advantage estimation
+clip_range:         0.2             # PPO clipping range (standard, prevents catastrophic updates)
+ent_coef:           0.008           # Reduced from 0.01 for better exploitation (decay to 0.005 during training)
+vf_coef:            0.5             # Value function loss coefficient (balanced with policy loss)
+max_grad_norm:      0.5             # Maximum gradient norm for clipping
+
+# Additional optimizations
+normalize_advantage: true            # Normalize advantages for better stability
+target_kl:          0.01            # Target KL divergence (early stopping if exceeded)
+

@@ -1,0 +1,26 @@
+---
+# OPTIMIZED PPO Hyperparameters for Head-to-Bot Racing
+# Tuned for multi-agent competitive environment
+
+seed:               42
+cpu_only:           false
+environment:        deepracer-v0
+experiment_name:    head_to_bot_ppo_optimized
+
+# PPO-specific hyperparameters - Optimized for Head-to-Bot
+learning_rate:      1.8e-4          # Reduced for multi-agent stability
+total_timesteps:    350000          # Longer training for competitive racing
+gamma:              0.98            # Reduced discount factor (more myopic - immediate competitive positioning matters)
+n_steps:            2048            # Experience buffer size
+batch_size:         256             # Increased for multi-agent complexity (more diverse experiences needed)
+n_epochs:           10              # Optimal epochs
+gae_lambda:         0.94            # Slightly reduced for multi-agent (more immediate advantage focus)
+clip_range:         0.2             # Standard clipping range
+ent_coef:           0.018           # Increased for exploration of overtaking strategies
+vf_coef:            0.5             # Value function coefficient
+max_grad_norm:      0.5             # Gradient clipping
+
+# Additional optimizations
+normalize_advantage: true            # Normalize advantages
+target_kl:          0.02            # Higher target KL for competitive exploration
+

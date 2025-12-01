@@ -1,0 +1,22 @@
+---
+# PPO hyper-parameters for DeepRacer
+# Iteration 1: Baseline Conservative Parameters
+# Based on optimization plan - establishes baseline on simplest track
+seed:               42
+cpu_only:           false
+environment:        deepracer-v0
+experiment_name:    time_trial_ppo
+
+# PPO-specific hyperparameters
+# Iteration 1: Conservative baseline for initial training
+learning_rate:      3e-4          # Standard PPO learning rate (optimal per research)
+total_timesteps:    200000        # Baseline training duration
+gamma:              0.99          # Discount factor (slightly lower for racing - immediate actions matter)
+n_steps:            2048          # Experience buffer size (100x batch_size for diversity)
+batch_size:         64            # Conservative batch size for initial training (will scale to 128 later)
+n_epochs:           10            # Optimal policy refinement iterations
+gae_lambda:         0.95          # GAE lambda parameter
+clip_range:         0.2           # PPO clipping range (standard, prevents catastrophic updates)
+ent_coef:           0.01          # Initial exploration coefficient (reduces to 0.005 once consistent)
+vf_coef:            0.5           # Value function loss coefficient
+max_grad_norm:      0.5           # Maximum gradient norm for clipping
